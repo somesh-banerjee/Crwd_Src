@@ -8,6 +8,7 @@ import { Router } from '../../routes';
 class CampaignNew extends Component {
 	state = {
 		minimumContribution: '',
+		info: '',
 		errorMessage: '',
 		loading: false
 	};
@@ -19,7 +20,7 @@ class CampaignNew extends Component {
 		try {
 			const accounts = await web3.eth.requestAccounts();
 			await factory.methods
-				.createCampaign(this.state.minimumContribution)
+				.createCampaign(this.state.minimumContribution,this.state.info)
 				.send({
 					from: accounts[0]
 				});
@@ -44,6 +45,15 @@ class CampaignNew extends Component {
 							labelPosition="right"
 							value={this.state.minimumContribution}
 							onChange={event => this.setState({ minimumContribution: event.target.value })}
+						/>
+				</Form.Field>
+				<Form.Field>
+						<label>Campaign website</label>
+						<Input
+							label="website"
+							labelPosition="right"
+							value={this.state.info}
+							onChange={event => this.setState({ info: event.target.value })}
 						/>
 					</Form.Field>
 					<Message error header="Oops!" content={this.state.errorMessage} />

@@ -38,6 +38,11 @@ class RequestIndex extends Component {
     const { Header, Row, HeaderCell, Body } = Table;
     return (
       <Layout>
+        <Link route={`/campaigns/${this.props.address}`}>
+          <a>
+            <Button>Back</Button>
+          </a>
+        </Link>
         <h3>Requests List</h3>
         <Link route={`/campaigns/${this.props.address}/requests/new`}>
           <a>

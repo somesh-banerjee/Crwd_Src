@@ -18,13 +18,14 @@ class CampaignShow extends Component {
       balance: summary[1],
       requestsCount: summary[2],
       approversCount: summary[3],
-      manager: summary[4]
+      manager: summary[4],
+      info: summary[5]
     };
   }
 
   renderCards() {
     const {
-      balance, manager, minimumContribution, requestsCount, approversCount
+      balance, manager, minimumContribution, requestsCount, approversCount, info
     } = this.props;
 
     const items = [
@@ -53,6 +54,11 @@ class CampaignShow extends Component {
         meta: "Address of Manager",
         description: "The creator of this campaign and can create requests to withdraw Ether from the contribution",
         style: { overflowWrap: 'break-word' }
+      },
+      {
+        header: info,
+        meta: "Campaign Website",
+        description: "Website for more details about the campaign"
       }
     ];
 

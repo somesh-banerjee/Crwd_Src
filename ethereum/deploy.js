@@ -4,7 +4,7 @@ const compiledFactory = require('./build/CampaignFactory.json');
 
 const provider = new HDWalletProvider(
 	'12 mnemonics',//Enter the 12 mnemonics of your wallet
-	'https://rinkeby.infura.io/v3/<here>'//enter infura auth token 
+	'https://rinkeby.infura.io/v3/<here>'//enter infura ProjectID token 
 );
 const web3 = new Web3(provider);
 
